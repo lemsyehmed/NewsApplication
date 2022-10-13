@@ -1,0 +1,32 @@
+﻿@using NewsApplication.Models
+@model Category
+
+
+    @{
+    Layout="~/Views/Shared/_Admin.cshtml";
+    ViewBag.Title ="ادارة التصنيفات";
+    ViewBag.BoxTitle = "إنشاء تصنيف جديد ";
+}
+
+<form asp-action="Create" asp-controller="Categories" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+
+        اسم التصنيف
+        <label asp-for="Name" class="control-label"></label>
+        <input asp-for="Name"  class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        وصف التصنيف
+        <label asp-for="Description"   class="control-label"></label>
+        <input asp-for="Description" class="form-control" />
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+     <div class="form-group">
+        <input type="submit" class="btn btn-primary" value="إنشاء"/>
+    </div>
+
+   
+</form>
